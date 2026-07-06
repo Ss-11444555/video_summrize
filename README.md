@@ -162,18 +162,6 @@ The frontend expects the API at:
 http://127.0.0.1:8000
 ```
 
-## Default Seed Accounts
-
-When the seeded database is created, these accounts are available:
-
-| Role | Email | Password |
-| --- | --- | --- |
-| Admin | `admin@thinknote.ai` | `Admin123!` |
-| Teacher | `teacher@thinknote.ai` | `Teacher123!` |
-| Student | `student@thinknote.ai` | `Student123!` |
-
-Change or remove these before using the project outside local development.
-
 ## Main Workflow
 
 1. A user signs up or logs in as an admin, teacher, or student.
