@@ -176,29 +176,30 @@ http://127.0.0.1:8000
 10. The teacher publishes or assigns the lecture to students.
 11. Students view the video, transcript, summary, slide notes, and can ask questions about the lecture content.
 
-## API Overview
+## Why This Product Matters
 
-Core routes:
+Lecture videos are valuable, but they are often difficult to review efficiently. Students may need to rewatch long recordings just to find one concept, formula, slide, or explanation. Teachers also spend extra time preparing study notes, checking whether summaries match the intended lesson, and making recorded content easier to reuse.
 
-- `GET /health` - backend health check
-- `POST /auth/login` - login and receive an access token
-- `POST /auth/signup` - create an account
-- `GET /auth/me` - current user details
-- `GET /videos` - list accessible videos
-- `POST /videos/upload` - upload a lecture video
-- `POST /videos/youtube` - import a YouTube lecture
-- `GET /videos/{video_id}` - video metadata
-- `GET /videos/{video_id}/stream` - stream video content
-- `POST /videos/{video_id}/assign` - assign video to a student
-- `GET /processing/{video_id}` - processing job status
-- `GET /results/{video_id}` - transcript, captions, summaries, and evaluation output
-- `POST /results/{video_id}/chat` - ask questions about a processed lecture
-- `GET /users/workspaces` - teacher workspaces
-- `POST /users/workspaces` - create a teacher workspace
-- `GET /analytics/overview` - admin analytics overview
-- `POST /education/vision/analyze-image` - analyze an educational image
+ThinkNote AI solves this by turning lecture videos into organized study material. It connects the spoken explanation, slide content, visual examples, equations, and generated notes into one learning experience.
 
-Use `http://127.0.0.1:8000/docs` for the full generated API reference.
+## Product Value
+
+- Helps students revise faster by turning long videos into structured summaries, slide notes, transcripts, and searchable learning moments.
+- Supports teachers by reducing the manual effort needed to prepare revision material from recorded lectures.
+- Improves learning accessibility by giving students multiple ways to understand the same content: video, transcript, summary, visual notes, and chat.
+- Preserves educational context by analyzing both audio and visuals instead of relying only on speech transcription.
+- Helps courses reuse lecture content more effectively by organizing videos under teacher workspaces and making processed results available to the right students.
+- Adds quality awareness through reference summaries and ROUGE evaluation, helping teachers compare generated summaries against expected learning points.
+
+## Target Users
+
+- Teachers who want to convert recorded lectures into student-ready revision material.
+- Students who need faster access to key lecture points, explanations, formulas, and examples.
+- Administrators who need visibility into uploaded content, processing activity, and learning resources.
+
+## Product Outcome
+
+The goal of ThinkNote AI is not only to summarize a video. The product aims to make lecture recordings easier to study, easier to teach from, and easier to manage as reusable educational resources.
 
 ## Testing
 
