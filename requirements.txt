@@ -1,0 +1,34 @@
+# Core backend
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+pydantic
+
+# AI and processing
+openai-whisper
+transformers
+torch
+pillow
+ffmpeg-python
+opencv-python
+paddlepaddle
+paddleocr
+pytesseract
+pix2tex
+qwen-vl-utils
+
+# NLP and evaluation
+nltk
+spacy
+scikit-learn
+rouge-score
+
+# API / LLM integration
+openai
+
+# Utilities
+numpy
+pandas
+yt-dlp
+yt-dlp-ejs

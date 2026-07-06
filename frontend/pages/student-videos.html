@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Student Videos</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="student-videos" class="student-courses-body">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <section class="role-panel">
+                    <span class="eyebrow">Student Library</span>
+                    <h2 id="videos-role-title">Lecture Video Catalog</h2>
+                    <p id="videos-role-copy">Browse all uploaded content based on role permissions and processing state.</p>
+                </section>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Overview</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="student-dashboard.html"><span>Dashboard</span><span>Home</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <div class="nav-label">Content</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="student-courses.html"><span>Courses</span><span>Access</span></a></li>
+                            <li><a class="nav-link active" href="student-videos.html"><span>Videos</span><span>Watch</span></a></li>
+                            <li><a class="nav-link" href="student-results.html"><span>Results</span><span>Study</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="student-courses-app">
+                <header class="student-summary-topbar">
+                    <div class="student-summary-titlebar">
+                        <strong>My Courses</strong>
+                    <span id="student-course-title">Available course videos</span>
+                    </div>
+
+                    <div class="student-summary-actions">
+                        <select class="student-video-selector" id="student-course-selector" aria-label="Select available course">
+                            <option>Loading courses...</option>
+                        </select>
+                        <a class="student-share-button" href="student-results.html">Videos</a>
+                    </div>
+                </header>
+
+                <section class="student-courses-layout">
+                    <aside class="student-course-list-shell">
+                        <div class="student-course-list-header">
+                            <span>Feature</span>
+                            <h1>My Courses</h1>
+                        </div>
+                        <div class="student-course-list" id="student-course-list"></div>
+                    </aside>
+
+                    <section class="student-course-detail">
+                        <div class="student-course-hero">
+                            <div>
+                                <span class="student-course-eyebrow">Available Course</span>
+                                <h2 id="student-active-course-name">Loading courses...</h2>
+                                <p id="student-active-course-copy">Courses appear here after approval or direct teacher assignment.</p>
+                            </div>
+                            <div class="student-course-stats">
+                                <strong id="student-course-video-count">0</strong>
+                                <span>videos</span>
+                            </div>
+                        </div>
+
+                        <div class="student-course-toolbar">
+                            <input id="search" type="search" placeholder="Search inside available courses">
+                            <select id="status-filter" aria-label="Filter videos by status">
+                                <option value="all">All Statuses</option>
+                                <option value="completed">Completed</option>
+                                <option value="processing">Processing</option>
+                                <option value="review">Review Needed</option>
+                            </select>
+                            <select id="role-view" class="is-hidden" aria-label="Account scope">
+                                <option value="current">Current Account</option>
+                            </select>
+                            <button class="is-hidden" id="apply-filters" type="button">Apply Filters</button>
+                        </div>
+
+                        <p class="student-course-feedback" id="video-results-count">Loading available courses...</p>
+                        <div class="student-course-video-grid" id="video-list"></div>
+                    </section>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/videos.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+venv*/
+env/
+ENV/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local databases and database tools
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.sqbpro
+
+# Logs and runtime files
+*.log
+*.out
+*.err
+backend/storage/*.log
+backend/storage/youtube_cookies.txt
+
+# Generated media, uploads, and AI outputs
+backend/storage/uploads/*
+backend/storage/audio/*
+backend/storage/frames/*
+backend/storage/annotated_frames/*
+backend/storage/equation_crops/*
+backend/storage/results/*
+
+# Keep storage folders in Git without committing generated contents
+!backend/storage/uploads/.gitkeep
+!backend/storage/audio/.gitkeep
+!backend/storage/frames/.gitkeep
+!backend/storage/annotated_frames/.gitkeep
+!backend/storage/equation_crops/.gitkeep
+!backend/storage/results/.gitkeep
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local assistant/tool metadata
+.agents/

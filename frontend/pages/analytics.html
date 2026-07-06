@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Analytics</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="analytics">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <section class="role-panel">
+                    <span class="eyebrow">Admin Analytics</span>
+                    <h2 id="analytics-role-title">Platform Monitoring</h2>
+                    <p id="analytics-role-copy">Observe usage trends, content growth, and summary quality metrics.</p>
+                </section>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Overview</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="dashboard.html"><span>Dashboard</span><span>Home</span></a></li>
+                            <li><a class="nav-link active" href="analytics.html"><span>Analytics</span><span>Admin</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <div class="nav-label">Content</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="upload.html"><span>Upload</span><span>Teacher</span></a></li>
+                            <li><a class="nav-link" href="videos.html"><span>Videos</span><span>Library</span></a></li>
+                            <li><a class="nav-link" href="results.html"><span>Results</span><span>AI Output</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Administrative View</span>
+                        <h2>Platform analytics, role usage, and model output quality</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge admin" data-role-badge>Admin</span>
+                        <a class="btn" href="dashboard.html">Return to Overview</a>
+                    </div>
+                </header>
+
+                <section class="analytics-stack">
+                    <div class="four-column" id="analytics-metrics"></div>
+
+                    <div class="two-column">
+                        <section class="panel">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Usage Trends</h2>
+                                    <p>Space reserved for chart rendering in the JavaScript step.</p>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder">
+                                <div class="chart-grid" id="usage-chart"></div>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Role Distribution</h2>
+                                    <p>Preview of admin reporting panels and workload summaries.</p>
+                                </div>
+                            </div>
+
+                            <div class="bar-list" id="role-distribution-list"></div>
+                        </section>
+                    </div>
+
+                    <div class="two-column">
+                        <section class="panel">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Pipeline Bottlenecks</h2>
+                                    <p>Operational monitoring for resource-heavy AI stages.</p>
+                                </div>
+                            </div>
+
+                            <div id="analytics-bottlenecks"></div>
+                        </section>
+
+                        <section class="panel">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Summary Quality Benchmarks</h2>
+                                    <p>ROUGE-focused indicators for admin review.</p>
+                                </div>
+                            </div>
+
+                            <div class="bar-list" id="analytics-quality-list"></div>
+                        </section>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/analytics.js"></script>
+</body>
+</html>

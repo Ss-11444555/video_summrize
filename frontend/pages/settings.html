@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Settings</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="settings">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Account Settings</span>
+                        <h2>Manage your profile and account access</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge teacher" data-role-badge>Teacher</span>
+                    </div>
+                </header>
+
+                <section class="panel" id="settings-menu">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Settings</h2>
+                            <p>Select one account action.</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-action-grid">
+                        <button class="settings-action-card" type="button" data-settings-view="profile">
+                            <span>Update Information</span>
+                            <small>Change your name, email, or password.</small>
+                        </button>
+                        <button class="settings-action-card danger" type="button" data-settings-view="delete">
+                            <span>Delete Account</span>
+                            <small>Verify your password and remove your account.</small>
+                        </button>
+                        <button class="settings-action-card" type="button" data-settings-view="workspace" data-teacher-only>
+                            <span>Workspace</span>
+                            <small>Choose or create a course workspace.</small>
+                        </button>
+                        <button class="settings-action-card" type="button" data-action="logout">
+                            <span>Logout</span>
+                            <small>Return to the login page.</small>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="panel is-hidden" id="settings-profile-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Update Information</h2>
+                            <p>After a successful update, you will return to Settings.</p>
+                        </div>
+                        <button class="btn-ghost" type="button" data-settings-back>Back</button>
+                    </div>
+
+                    <form class="settings-form" id="settings-profile-form">
+                        <div class="field">
+                            <label for="settings-full-name">Full Name</label>
+                            <input id="settings-full-name" name="full_name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="settings-email">Email</label>
+                            <input id="settings-email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="settings-password">New Password</label>
+                            <input id="settings-password" name="password" type="password" autocomplete="new-password" placeholder="Leave blank to keep current password">
+                        </div>
+                        <p class="feedback-banner info" id="settings-profile-feedback">Update your information when needed.</p>
+                        <button class="btn" type="submit">Update Information</button>
+                    </form>
+                </section>
+
+                <section class="panel is-hidden" id="settings-delete-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Delete Account</h2>
+                            <p>Enter your password to permanently delete your account and related data.</p>
+                        </div>
+                        <button class="btn-ghost" type="button" data-settings-back>Back</button>
+                    </div>
+
+                    <form class="settings-form" id="settings-delete-form">
+                        <div class="field">
+                            <label for="settings-delete-password">Password</label>
+                            <input id="settings-delete-password" name="password" type="password" autocomplete="current-password" required>
+                        </div>
+                        <p class="feedback-banner warning" id="settings-delete-feedback">This action cannot be undone.</p>
+                        <button class="btn-danger" type="submit">Delete Account</button>
+                    </form>
+                </section>
+
+                <section class="panel is-hidden" id="settings-workspace-panel" data-teacher-only-panel>
+                    <div class="section-heading">
+                        <div>
+                            <h2>Workspace</h2>
+                            <p>Choose an existing course or create a new workspace. You will be redirected to Home.</p>
+                        </div>
+                        <button class="btn-ghost" type="button" data-settings-back>Back</button>
+                    </div>
+
+                    <div class="settings-form">
+                        <div class="field">
+                            <label for="teacher-workspace-select">Workspace</label>
+                            <select id="teacher-workspace-select" data-workspace-select>
+                                <option>Loading courses...</option>
+                            </select>
+                        </div>
+                        <button class="btn" type="button" data-workspace-add>Add Course</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+</html>

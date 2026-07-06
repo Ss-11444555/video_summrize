@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Upload</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="upload">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <section class="role-panel">
+                    <span class="eyebrow">Teacher Tool</span>
+                    <h2 id="upload-role-title">Lecture Upload</h2>
+                    <p id="upload-role-copy">Prepare metadata, upload the video, and monitor every AI stage.</p>
+                </section>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Overview</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="teacher-dashboard.html"><span>Home</span><span>Overview</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <div class="nav-label">Content</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link active" href="upload.html"><span>Upload</span><span>Teacher</span></a></li>
+                            <li><a class="nav-link" href="teacher-videos.html"><span>Videos</span><span>Library</span></a></li>
+                            <li><a class="nav-link" href="teacher-results.html"><span>Results</span><span>AI Output</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Upload Workspace</span>
+                        <h2>Submit a lecture for multimodal AI processing</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge teacher" data-role-badge>Teacher</span>
+                        <a class="btn-ghost" href="teacher-videos.html">My Videos</a>
+                    </div>
+                </header>
+
+                <section class="two-column">
+                    <article class="panel">
+                        <div class="section-heading">
+                            <div>
+                                <h2>Lecture Details</h2>
+                                <p>Collect the metadata that will help organize summaries for later search and review.</p>
+                            </div>
+                        </div>
+
+                        <div class="dropzone" id="upload-dropzone">
+                            <span class="eyebrow">Video Input</span>
+                            <div class="upload-source-toggle" aria-label="Choose video source">
+                                <button class="active" id="source-file-button" type="button" data-upload-source="file">Video File</button>
+                                <button id="source-youtube-button" type="button" data-upload-source="youtube">YouTube Link</button>
+                            </div>
+                            <h3 id="upload-input-title">Drag and drop your lecture file here</h3>
+                            <p id="upload-input-copy">Supported formats: MP4, MOV, MKV. Large lecture videos will be processed in the background.</p>
+                            <input id="video-file" type="file" accept="video/*" class="is-hidden">
+                            <button class="btn-secondary" id="file-picker-button" type="button">Choose File</button>
+                            <div class="field is-hidden" id="youtube-url-field">
+                                <label for="youtube-url">YouTube Video URL</label>
+                                <input id="youtube-url" type="url" placeholder="https://www.youtube.com/watch?v=...">
+                            </div>
+                            <p class="metric-inline" id="selected-file-name">No file selected yet.</p>
+                        </div>
+
+                        <form class="form-grid" id="upload-form" style="margin-top: 20px;">
+                            <div class="field">
+                                <label for="title">Lecture Title</label>
+                                <input id="title" type="text" placeholder="Introduction to Machine Learning">
+                            </div>
+                            <div class="field">
+                                <label for="course">Course Name</label>
+                                <input id="course" type="text" placeholder="CSC401 Artificial Intelligence">
+                            </div>
+                            <div class="field">
+                                <label for="week">Week / Module</label>
+                                <input id="week" type="text" placeholder="Week 5 - Neural Networks">
+                            </div>
+                            <div class="field">
+                                <label for="audience">Visibility</label>
+                                <select id="audience">
+                                    <option>Students in course</option>
+                                    <option>Private draft</option>
+                                    <option>Department shared</option>
+                                </select>
+                            </div>
+                            <div class="field" style="grid-column: 1 / -1;">
+                                <label for="description">Lecture Notes</label>
+                                <textarea id="description" placeholder="Add any context for the summarization pipeline, such as course objectives, expected concepts, or known slide structure."></textarea>
+                            </div>
+                            <div class="field" style="grid-column: 1 / -1;">
+                                <label for="reference-summary">Teacher Reference Summary</label>
+                                <textarea
+                                    id="reference-summary"
+                                    required
+                                    placeholder="Write the expected lecture summary. The generated AI summary will be compared with this text using ROUGE-1, ROUGE-2, and ROUGE-L."
+                                ></textarea>
+                                <small>Required before upload. Write the main topics, concepts, and conclusions expected in the generated summary.</small>
+                            </div>
+                            <div style="grid-column: 1 / -1;" class="view-grid">
+                                <p id="upload-feedback" class="feedback-banner info">Upload will be saved to your account and processed .</p>
+                                <button class="btn" id="start-upload-button" type="submit">Start Processing</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <aside class="view-grid">
+                        <section class="feedback-banner warning is-hidden" id="upload-role-guard"></section>
+
+                        <section class="panel">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Pipeline Status</h2>
+                                    <p id="upload-status-copy">No active processing job. Start a new upload to monitor the pipeline.</p>
+                                </div>
+                            </div>
+
+                            <div class="pipeline-status-card" id="pipeline-current-card" data-pipeline-state="waiting">
+                                <div class="pipeline-status-header">
+                                    <div class="progress-index" id="pipeline-current-index">0</div>
+                                    <div class="pipeline-status-copy">
+                                        <span class="eyebrow">Current Stage</span>
+                                        <strong id="pipeline-current-title">Ready to Start</strong>
+                                        <p id="pipeline-current-copy">Choose a video file or paste a YouTube link to begin processing.</p>
+                                    </div>
+                                    <span class="status-pill warning" id="pipeline-current-status">Waiting</span>
+                                </div>
+                                <div class="progress-bar pipeline-overall-bar">
+                                    <span id="pipeline-overall-fill" style="width: 0%;"></span>
+                                </div>
+                                <div class="pipeline-progress-meta">
+                                    <span id="pipeline-overall-label">0% complete</span>
+                                    <span id="pipeline-active-detail">No active job</span>
+                                </div>
+                            </div>
+
+                            <ul class="pipeline-checklist" aria-label="Pipeline checklist">
+                                <li data-step="uploaded" data-pipeline-state="waiting">
+                                    <span class="pipeline-check-icon">1</span>
+                                    <span class="pipeline-check-text">Video Uploaded</span>
+                                </li>
+                                <li data-step="audio" data-pipeline-state="waiting">
+                                    <span class="pipeline-check-icon">2</span>
+                                    <span class="pipeline-check-text">Audio Extracted</span>
+                                </li>
+                                <li data-step="transcription" data-pipeline-state="waiting">
+                                    <span class="pipeline-check-icon">3</span>
+                                    <span class="pipeline-check-text">Transcript Generated</span>
+                                </li>
+                                <li data-step="captioning" data-pipeline-state="waiting">
+                                    <span class="pipeline-check-icon">4</span>
+                                    <span class="pipeline-check-text">Visual Understanding</span>
+                                </li>
+                                <li data-step="summary" data-pipeline-state="waiting">
+                                    <span class="pipeline-check-icon">5</span>
+                                    <span class="pipeline-check-text">Summary and ROUGE</span>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </aside>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/upload.js"></script>
+</body>
+</html>

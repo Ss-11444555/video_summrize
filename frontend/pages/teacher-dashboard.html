@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Teacher Dashboard</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="teacher-dashboard">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <section class="role-panel">
+                    <span class="eyebrow">Active Role</span>
+                    <h2 id="dashboard-role-title">Teacher Dashboard</h2>
+                    <p id="dashboard-role-copy">Create, review, and share study-ready lecture notes.</p>
+                </section>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Overview</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link active" href="teacher-dashboard.html"><span>Home</span><span>Overview</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <div class="nav-label">Content</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="upload.html"><span>Upload</span><span>Teacher</span></a></li>
+                            <li><a class="nav-link" href="teacher-videos.html"><span>Videos</span><span>Library</span></a></li>
+                            <li><a class="nav-link" href="teacher-results.html"><span>Results</span><span>AI Output</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <div class="nav-label">Access</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="settings.html"><span>Settings</span><span>Account</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Product Home</span>
+                        <h2>Turn lecture videos into study-ready notes</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge teacher" data-role-badge>Teacher</span>
+                        <span class="chip" id="dashboard-role-chip">Batch 04: Educational AI</span>
+                        <a class="btn" href="upload.html">Upload New Video</a>
+                    </div>
+                </header>
+
+                <section class="hero-card">
+                    <span class="eyebrow">ThinkNote AI</span>
+                    <h1 id="dashboard-hero-title">Upload a lecture. Get clear summaries, searchable moments, and notes students can study from.</h1>
+                    <p id="dashboard-hero-description">
+                        ThinkNote AI helps teachers publish useful learning material faster and gives students one
+                        readable place to watch, search, and revise lecture content.
+                    </p>
+                    <div class="chip-row">
+                        <span class="status-pill success">Study Notes Ready</span>
+                        <span class="status-pill processing">Transcript Search</span>
+                        <span class="status-pill warning">Teacher Review</span>
+                    </div>
+                </section>
+
+                <section class="dashboard-grid">
+                    <div class="four-column">
+                        <article class="metric-card">
+                            <span id="metric-label-1">Total Videos</span>
+                            <strong data-metric-key="primary">128</strong>
+                            <p id="metric-copy-1">Lecture videos available in your teaching library.</p>
+                        </article>
+                        <article class="metric-card">
+                            <span id="metric-label-2">Completed Summaries</span>
+                            <strong data-metric-key="secondary">94</strong>
+                            <p id="metric-copy-2">Summaries ready for review, sharing, or study.</p>
+                        </article>
+                        <article class="metric-card">
+                            <span id="metric-label-3">Students Reached</span>
+                            <strong data-metric-key="tertiary">412</strong>
+                            <p id="metric-copy-3">Students actively using search, summaries, and transcript view.</p>
+                        </article>
+                        <article class="metric-card">
+                            <span id="metric-label-4">Summary Quality</span>
+                            <strong data-metric-key="quaternary">0.71</strong>
+                            <p id="metric-copy-4">Average quality score for generated lecture summaries.</p>
+                        </article>
+                    </div>
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>What You Can Do</h2>
+                            <p>Start from the product tasks users care about most.</p>
+                        </div>
+                    </div>
+
+                    <div class="product-action-grid">
+                        <article class="product-action-card">
+                            <span class="action-icon">01</span>
+                            <h3>Create Lecture Notes</h3>
+                            <p>Upload a class video and receive a clean summary that students can read after watching.</p>
+                            <ul class="info-list">
+                                <li>Keep the original video connected to the generated notes</li>
+                                <li>Review the summary before sharing it with students</li>
+                                <li>Organize lectures by course and title</li>
+                            </ul>
+                        </article>
+
+                        <article class="product-action-card featured">
+                            <span class="action-icon">02</span>
+                            <h3>Study Faster</h3>
+                            <p>Open a lecture, read the main points, and jump back to important video moments.</p>
+                            <ul class="info-list">
+                                <li>Search across topics, transcript text, and summary notes</li>
+                                <li>Use concise summaries for revision</li>
+                                <li>Compare video context with written notes</li>
+                            </ul>
+                        </article>
+
+                        <article class="product-action-card">
+                            <span class="action-icon">03</span>
+                            <h3>Share With Confidence</h3>
+                            <p>Publish completed lecture resources only when they are ready for the right class.</p>
+                            <ul class="info-list">
+                                <li>Control which videos students can access</li>
+                                <li>Keep summaries readable and consistent</li>
+                                <li>Track which lectures are completed or still pending</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

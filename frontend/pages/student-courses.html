@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Student Courses</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="student-courses">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <section class="role-panel">
+                    <span class="eyebrow">Course Access</span>
+                    <h2>Course Registration</h2>
+                    <p>Request access to courses before opening their lectures and study notes.</p>
+                </section>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Overview</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="student-dashboard.html"><span>Home</span><span>Overview</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <div class="nav-label">Content</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="student-videos.html"><span>Lectures</span><span>Watch</span></a></li>
+                            <li><a class="nav-link active" href="student-courses.html"><span>Courses</span><span>Access</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Course Access</span>
+                        <h2>Find courses and track approval status</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge student" data-role-badge>Student</span>
+                        <a class="btn" href="student-videos.html">Open Lectures</a>
+                    </div>
+                </header>
+
+                <section class="panel" id="course-registration-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Register Or Open Assigned Videos</h2>
+                            <p>Request full course access, or open videos your teacher assigned directly to you.</p>
+                        </div>
+                    </div>
+
+                    <p class="feedback-banner info" id="course-registration-feedback">Loading courses...</p>
+                    <section class="video-card-grid" id="course-list"></section>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/videos.js"></script>
+</body>
+</html>

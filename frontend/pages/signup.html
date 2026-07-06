@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Sign Up</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="signup">
+    <main class="login-shell">
+        <section class="login-hero">
+            <div class="view-grid">
+                <span class="eyebrow">Create your account</span>
+                <h1>Sign up for ThinkNote AI</h1>
+                <p>
+                    Teacher accounts can upload lectures and view processing results.
+                    Student accounts can view published lectures and their generated outputs.
+                </p>
+            </div>
+
+            <div class="login-highlight-grid">
+                <article class="login-highlight">
+                    <strong>Teacher</strong>
+                    <p>Upload videos and manage AI processing outputs.</p>
+                </article>
+                <article class="login-highlight">
+                    <strong>Student</strong>
+                    <p>Access published results for revision and study.</p>
+                </article>
+                <article class="login-highlight">
+                    <strong>Security</strong>
+                    <p>Passwords are saved securely in SQLite using hashed storage.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="login-panel">
+            <div class="login-meta">
+                <span class="eyebrow">Signup</span>
+                <span class="chip">SQLite-backed accounts</span>
+            </div>
+
+            <div class="view-grid">
+                <h2>Create your role account</h2>
+                <p>Choose teacher or student and set your login credentials.</p>
+            </div>
+
+            <form class="view-grid" id="signup-form">
+                <div class="field">
+                    <label for="full_name">Full Name</label>
+                    <input id="full_name" type="text" placeholder="e.g., Ali Student" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">University Email</label>
+                    <input id="email" type="email" placeholder="e.g., student@campus.edu" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Create a strong password" autocomplete="new-password" required>
+                </div>
+
+                <div class="field">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input id="confirm_password" type="password" placeholder="Re-enter your password" autocomplete="new-password" required>
+                </div>
+
+                <div class="field">
+                    <label for="role">Role</label>
+                    <select id="role" required>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+
+                <div class="field" id="workspace-name-field">
+                    <label for="workspace_name">First Course Workspace</label>
+                    <input id="workspace_name" type="text" placeholder="e.g., CSC401 Artificial Intelligence">
+                </div>
+
+                <p id="signup-feedback" class="feedback-banner info">Use at least 8 characters with one letter and one number.</p>
+
+                <div class="row-between" style="gap: 12px; align-items: center;">
+                    <a class="btn-ghost" href="login.html">Back to Login</a>
+                    <button class="btn" type="submit">Create Account</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/signup.js?v=2"></script>
+</body>
+</html>
+

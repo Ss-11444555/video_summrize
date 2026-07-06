@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Login</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="login">
+    <main class="login-shell">
+        <section class="login-hero">
+            <div class="view-grid">
+                <span class="eyebrow">ThinkNote AI for Education</span>
+                <h1>Make every lecture easier to review, share, and study.</h1>
+                <p>
+                    A focused workspace for turning class recordings into organized learning
+                    resources that teachers can publish and students can use with confidence.
+                </p>
+            </div>
+
+            <div class="login-product-preview">
+                <div class="preview-window">
+                    <div class="preview-video">
+                        <div class="preview-video-frame">
+                            <div class="preview-video-top">
+                                <strong>Lecture Preview</strong>
+                                <span>42 min</span>
+                            </div>
+                            <div class="preview-board">
+                                <span class="board-line wide"></span>
+                                <span class="board-line"></span>
+                                <span class="board-line short"></span>
+                            </div>
+                            <div class="preview-caption">Key topic detected: model training workflow</div>
+                        </div>
+                        <button class="preview-play" type="button" aria-label="Lecture preview"></button>
+                    </div>
+                    <div class="preview-notes">
+                        <small>Published lecture</small>
+                        <strong>Machine Learning - Week 7</strong>
+                        <p>Clean notes, key topics, transcript, and video moments are ready for review.</p>
+                        <span></span>
+                        <span></span>
+                        <span class="short"></span>
+                    </div>
+                </div>
+                <div class="preview-card">
+                    <strong>Ready for students</strong>
+                    <p>One lecture resource, fully organized</p>
+                </div>
+            </div>
+
+            <div class="login-highlight-grid">
+                <article class="login-highlight">
+                    <strong>Create Learning Resources</strong>
+                    <p>Turn class recordings into notes that are easier to read and reuse.</p>
+                </article>
+                <article class="login-highlight">
+                    <strong>Improve Student Revision</strong>
+                    <p>Give students a faster way to find the lesson points they need.</p>
+                </article>
+                <article class="login-highlight">
+                    <strong>Keep Courses Organized</strong>
+                    <p>Manage videos, notes, and access from one professional workspace.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="login-panel">
+            <div class="login-meta">
+                <span class="eyebrow">Welcome Back</span>
+                <span class="chip">Secure Sign In</span>
+            </div>
+
+            <div class="view-grid">
+                <h2>Access your workspace</h2>
+                <p>Sign in with your account email and password to continue.</p>
+            </div>
+
+            <form class="view-grid" id="login-form">
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" placeholder="name@campus.edu">
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Enter your password">
+                </div>
+
+                <p id="login-feedback" class="feedback-banner info">Enter your account details to continue.</p>
+                <div class="row-between" style="gap: 12px; align-items: center;">
+                    <a class="btn-ghost" href="signup.html">Create Account</a>
+                    <button class="btn" type="submit">Sign In</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="../js/app.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

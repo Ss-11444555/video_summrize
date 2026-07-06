@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Teacher Videos</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="teacher-videos">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <section class="role-panel">
+                    <span class="eyebrow">Teacher Library</span>
+                    <h2 id="videos-role-title">Lecture Video Catalog</h2>
+                    <p id="videos-role-copy">Browse all uploaded content based on role permissions and processing state.</p>
+                </section>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Overview</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="teacher-dashboard.html"><span>Home</span><span>Overview</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <div class="nav-label">Content</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="upload.html"><span>Upload</span><span>Teacher</span></a></li>
+                            <li><a class="nav-link active" href="teacher-videos.html"><span>Videos</span><span>Library</span></a></li>
+                            <li><a class="nav-link" href="teacher-results.html"><span>Results</span><span>AI Output</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Video Repository</span>
+                        <h2>Search, filter, and monitor uploaded lectures</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge teacher" data-role-badge>Teacher</span>
+                        <a class="btn" href="teacher-results.html">Open Latest Summary</a>
+                    </div>
+                </header>
+
+                <section class="panel" id="video-library-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Search Library</h2>
+                            <p id="video-results-copy">Designed for both teacher management and student content discovery.</p>
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="field">
+                            <label for="search">Keyword Search</label>
+                            <input id="search" type="text" placeholder="Search by title, course, topic, or lecturer">
+                        </div>
+                        <div class="field">
+                            <label for="role-view">Account Scope</label>
+                            <select id="role-view">
+                                <option value="current">Current Account</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="status-filter">Status</label>
+                            <select id="status-filter">
+                                <option value="all">All Statuses</option>
+                                <option value="completed">Completed</option>
+                                <option value="processing">Processing</option>
+                                <option value="review">Review Needed</option>
+                            </select>
+                        </div>
+                        <div style="display: flex; align-items: end;">
+                            <button class="btn-secondary" id="apply-filters" type="button">Apply Filters</button>
+                        </div>
+                    </div>
+                </section>
+
+                <p class="feedback-banner info" id="video-results-count">Loading video library...</p>
+                <section class="video-card-grid" id="video-list"></section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/videos.js"></script>
+</body>
+</html>

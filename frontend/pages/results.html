@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Results</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="results">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <section class="role-panel">
+                    <span class="eyebrow">AI Output</span>
+                    <h2 id="results-role-title">Summary Results</h2>
+                    <p id="results-role-copy">Review transcript, fusion output, summary blocks, and evaluation scores.</p>
+                </section>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Overview</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="dashboard.html"><span>Dashboard</span><span>Home</span></a></li>
+                            <li><a class="nav-link" href="analytics.html"><span>Analytics</span><span>Admin</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <div class="nav-label">Content</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="upload.html"><span>Upload</span><span>Teacher</span></a></li>
+                            <li><a class="nav-link" href="videos.html"><span>Videos</span><span>Library</span></a></li>
+                            <li><a class="nav-link active" href="results.html"><span>Results</span><span>AI Output</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Processed Lecture</span>
+                        <h2>Multimodal result inspection and summary evaluation</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge teacher" data-role-badge>Teacher</span>
+                        <select class="results-control" id="result-video-selector" aria-label="Select processed video">
+                            <option>Loading videos...</option>
+                        </select>
+                        <a class="btn-secondary" href="videos.html">Back to Videos</a>
+                    </div>
+                </header>
+
+                <section class="hero-card">
+                    <span class="eyebrow">Lecture Output</span>
+                    <h1 id="result-lecture-title">Computer Vision Fundamentals: Edge Detection and Image Features</h1>
+                    <p id="result-lecture-description">
+                        Transcript and generated context have been fused into a structured summary with key concepts,
+                        examples, and revision points for students.
+                    </p>
+                    <div class="chip-row" id="result-score-chips">
+                        <span class="status-pill success">Summary Ready</span>
+                    </div>
+                </section>
+
+                <section class="result-grid result-output-grid">
+                    <article class="summary-card result-block">
+                        <h3>Transcript</h3>
+                        <div class="transcript-box" id="result-transcript"></div>
+                    </article>
+
+                    <article class="summary-card result-block">
+                        <h3>Fused Context</h3>
+                        <div class="summary-box" id="result-fusion"></div>
+                    </article>
+                </section>
+
+                <section class="two-column">
+                    <article class="panel">
+                        <div class="section-heading">
+                            <div>
+                                <h2>Structured Summary</h2>
+                                <p>Designed for revision, teaching review, and quick student understanding.</p>
+                            </div>
+                        </div>
+
+                        <ul class="summary-list" id="result-summary-list"></ul>
+                    </article>
+
+                    <aside class="view-grid">
+                        <section class="panel">
+                            <h3>ROUGE Evaluation</h3>
+                            <div id="result-rouge-list"></div>
+                        </section>
+                    </aside>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/results.js"></script>
+</body>
+</html>

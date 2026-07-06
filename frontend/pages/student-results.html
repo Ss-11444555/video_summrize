@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Student Study Notes</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="student-results" class="student-summary-body">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar"></aside>
+
+            <main class="student-summary-app">
+                <header class="student-summary-topbar">
+                    <div class="student-summary-titlebar">
+                        <strong id="student-result-context-label">Course</strong>
+                        <span id="result-lecture-title">Loading study notes...</span>
+                    </div>
+
+                    <div class="student-summary-actions">
+                        <select class="student-video-selector" id="result-video-selector" aria-label="Select assigned video">
+                            <option>Loading videos...</option>
+                        </select>
+                        <a class="student-share-button" id="student-back-to-course" href="student-videos.html">Course Videos</a>
+                    </div>
+                </header>
+
+                <div class="student-summary-layout">
+                    <aside class="student-tool-rail" aria-label="Student result tools">
+                        <button class="student-tool-link active" type="button" data-study-tab="summary">
+                            <span class="student-tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5V3Zm9 1.8V8h3.2L14 4.8ZM8 11h8v1.8H8V11Zm0 4h8v1.8H8V15Zm0-8h4v1.8H8V7Z"/></svg>
+                            </span>
+                            <span>Summary</span>
+                        </button>
+                        <button class="student-tool-link" type="button" data-study-tab="slides">
+                            <span class="student-tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M4 4h16v12H4V4Zm2 2v8h12V6H6Zm5 11h2v2h4v2H7v-2h4v-2Zm-3-9h8v1.7H8V8Zm0 3h5v1.7H8V11Z"/></svg>
+                            </span>
+                            <span>Slide Summaries</span>
+                        </button>
+                        <button class="student-tool-link" type="button" data-study-tab="transcript">
+                            <span class="student-tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M6 3h12v18H6V3Zm2 2v14h8V5H8Zm2 3h4v1.7h-4V8Zm0 3h4v1.7h-4V11Zm0 3h4v1.7h-4V14Z"/></svg>
+                            </span>
+                            <span>Transcript</span>
+                        </button>
+                        <button class="student-tool-link" type="button" data-study-tab="mindmap">
+                            <span class="student-tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M11 4h2v4.1a4 4 0 0 1 2.8 2.8H20v2h-4.2a4 4 0 0 1-2.8 2.8V20h-2v-4.3A4 4 0 0 1 8.2 13H4v-2h4.2A4 4 0 0 1 11 8.1V4Zm1 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 5.5A2.5 2.5 0 1 1 5.5 8 2.5 2.5 0 0 1 3 5.5Zm13 13A2.5 2.5 0 1 1 18.5 21a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+                            </span>
+                            <span>MindMap</span>
+                        </button>
+                        <button class="student-tool-link" type="button" data-study-tab="chat">
+                            <span class="student-tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-5.5L7 19v-4a3 3 0 0 1-3-3V5Zm3-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h2v1.6l1.7-1.6H17a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7Zm1.5 3h7v1.7h-7V7Zm0 3h5v1.7h-5V10Z"/></svg>
+                            </span>
+                            <span>Chat</span>
+                        </button>
+                    </aside>
+
+                    <section class="student-summary-main">
+                        <div class="student-summary-panel">
+                            <div class="student-panel-header">
+                                <h1 id="student-panel-title">Summary</h1>
+                                <div class="student-panel-tools" aria-label="Summary actions">
+                                    <button id="student-download-summary" type="button" aria-label="Download">Download</button>
+                                    <button id="student-share-summary" type="button" aria-label="Share">Share</button>
+                                </div>
+                            </div>
+
+                            <article class="student-study-tab active" data-study-panel="summary">
+                                <h2>Overview</h2>
+                                <div class="student-overview-card" id="student-summary-overview">
+                                    Loading summary...
+                                </div>
+                                <div class="student-tag-row" id="student-summary-tags"></div>
+                            </article>
+
+                            <article class="student-study-tab" data-study-panel="slides">
+                                <h2>Slide Summaries</h2>
+                                <div class="student-slide-summary-list" id="student-slide-summary-list"></div>
+                            </article>
+
+                            <article class="student-study-tab" data-study-panel="transcript">
+                                <h2>Transcript</h2>
+                                <div class="student-long-text" id="student-transcript-text">Transcript not available yet.</div>
+                            </article>
+
+                            <article class="student-study-tab" data-study-panel="mindmap">
+                                <h2>MindMap</h2>
+                                <div class="student-mindmap-list" id="student-mindmap-list"></div>
+                            </article>
+
+                            <article class="student-study-tab" data-study-panel="chat">
+                                <h2>Chat</h2>
+                                <div class="student-chat-list" id="student-chat-list" aria-live="polite"></div>
+                                <form class="student-chat-form" id="student-chat-form">
+                                    <input id="student-chat-input" type="text" placeholder="Ask about this video or type: go to statistics" autocomplete="off">
+                                    <button type="submit">Send</button>
+                                </form>
+                            </article>
+                        </div>
+
+                        <div class="student-video-stage">
+                            <div class="student-video-shell">
+                                <video id="student-result-video" preload="metadata"></video>
+                                <div class="student-video-caption" id="student-video-caption" aria-live="polite"></div>
+                                <div class="student-video-overlay">
+                                    <div>
+                                        <strong id="student-video-title">Loading video...</strong>
+                                        <span id="result-course-name">Course</span>
+                                    </div>
+                                </div>
+                                <button class="student-video-play" id="student-play-overlay" type="button" aria-label="Play video">Play</button>
+
+                                <div class="student-player-bar">
+                                    <button id="student-play-toggle" type="button" aria-label="Play or pause">Play</button>
+                                    <strong id="student-current-time">00:00:00.00</strong>
+                                    <input id="student-progress" type="range" min="0" max="1000" value="0" aria-label="Video progress">
+                                    <span id="student-duration-time">00:00:00.00</span>
+                                    <button id="student-mute-toggle" type="button" aria-label="Mute or unmute">Vol</button>
+                                    <button id="student-fullscreen-toggle" type="button" aria-label="Open fullscreen">Full</button>
+                                    <button id="student-settings-toggle" type="button" aria-expanded="false" aria-label="Video settings">...</button>
+                                </div>
+
+                                <div class="student-player-options" id="student-player-settings" aria-label="Video playback settings" hidden>
+                                    <button id="student-caption-toggle" type="button" aria-pressed="true">Captions On</button>
+                                    <button id="student-transcript-toggle" type="button" aria-expanded="false">Transcript</button>
+                                    <label>
+                                        <span>Quality</span>
+                                        <select id="student-quality-select">
+                                            <option value="auto">Auto</option>
+                                            <option value="720">720p</option>
+                                            <option value="480">480p</option>
+                                            <option value="360">360p</option>
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <span>Speed</span>
+                                        <select id="student-speed-select">
+                                            <option value="0.5">0.5x</option>
+                                            <option value="0.75">0.75x</option>
+                                            <option value="1" selected>1x</option>
+                                            <option value="1.25">1.25x</option>
+                                            <option value="1.5">1.5x</option>
+                                            <option value="2">2x</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="student-video-transcript" id="student-video-transcript" hidden>
+                                <div class="student-video-transcript-header">
+                                    <strong>Transcript</strong>
+                                    <span id="student-quality-note">Auto uses the available stream.</span>
+                                </div>
+                                <div class="student-video-transcript-list" id="student-video-transcript-list"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/results.js"></script>
+</body>
+</html>

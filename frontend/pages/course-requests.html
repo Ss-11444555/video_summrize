@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkNote AI | Course Requests</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="course-requests">
+    <div class="page-shell">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-mark">TN</div>
+                    <div class="brand-copy">
+                        <h1>ThinkNote AI</h1>
+                        <p>Educational Video Intelligence</p>
+                    </div>
+                </div>
+
+                <nav>
+                    <div class="nav-group">
+                        <div class="nav-label">Navigation</div>
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="teacher-dashboard.html"><span>Home</span><span>Overview</span></a></li>
+                            <li><a class="nav-link" href="teacher-results.html"><span>Analytics</span><span>Results</span></a></li>
+                            <li><a class="nav-link" href="teacher-videos.html"><span>Videos</span><span>Library</span></a></li>
+                            <li><a class="nav-link" href="upload.html"><span>Upload</span><span>Teacher</span></a></li>
+                            <li><a class="nav-link active" href="course-requests.html"><span>Course Requests</span><span>Students</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="content-shell">
+                <header class="topbar">
+                    <div>
+                        <span class="eyebrow">Course Requests</span>
+                        <h2>Review student course access requests</h2>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <span class="role-badge teacher" data-role-badge>Teacher</span>
+                    </div>
+                </header>
+
+                <section class="panel is-hidden" id="student-request-panel">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Course Access Requests</h2>
+                            <p>Accept course requests before students can watch that course&apos;s lectures or open study notes.</p>
+                        </div>
+                    </div>
+
+                    <p class="feedback-banner info" id="student-request-feedback">Loading course requests...</p>
+                    <section class="video-card-grid" id="student-request-list"></section>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/videos.js"></script>
+</body>
+</html>
