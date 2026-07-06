@@ -46,35 +46,6 @@ video_summrize/
 └── requirements.txt        # Python dependencies
 ```
 
-## What Should Be Uploaded To GitHub
-
-Commit these project files:
-
-- `ai/`
-- `backend/app/`
-- `backend/storage/**/.gitkeep`
-- `database/`
-- `docs/`
-- `frontend/`
-- `tests/`
-- `.env.example`
-- `.gitignore`
-- `README.md`
-- `requirements.txt`
-
-Do not commit these local or generated files:
-
-- `.env`
-- `venv311/`, `venv/`, `.venv/`, or any virtual environment folder
-- `thinknote_ai.db`, `*.db`, `*.sqlite`, `*.sqlite3`
-- `*.sqbpro`
-- uploaded videos, extracted audio, frames, annotated frames, equation crops, generated results, and debug outputs
-- `backend/storage/youtube_cookies.txt`
-- `*.log`, `*.out`, `*.err`
-- `__pycache__/` and test/cache folders
-
-The `.gitignore` file in this repository is configured for these rules.
-
 ## Requirements
 
 Install these before running the project:
@@ -87,64 +58,7 @@ Install these before running the project:
 
 Some AI dependencies are large. Use a virtual environment and make sure you have enough disk space.
 
-## Setup
 
-From PowerShell:
-
-```powershell
-cd "D:\SEM_6\FYP1\project\video_summrize"
-python -m venv venv311
-.\venv311\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-Copy-Item .env.example .env
-```
-
-Edit `.env` and set values for your local machine.
-
-Important values:
-
-```env
-APP_HOST=127.0.0.1
-APP_PORT=8000
-DATABASE_URL=sqlite:///./thinknote_ai.db
-SECRET_KEY=replace-with-a-secure-secret-key
-OPENAI_API_KEY=your_openai_api_key_here
-REASONING_PROVIDER=openai
-REASONING_MODEL=gpt-5.2
-VISION_LANGUAGE_PROVIDER=local
-VISION_LANGUAGE_MODEL=Qwen/Qwen2-VL-2B-Instruct
-ENABLE_GPU=true
-ALLOW_MODEL_DOWNLOADS=false
-```
-
-If you do not want local model downloads during testing, keep:
-
-```env
-ALLOW_MODEL_DOWNLOADS=false
-```
-
-## Run The Backend
-
-Activate the virtual environment, then start FastAPI:
-
-```powershell
-cd "D:\SEM_6\FYP1\project\video_summrize"
-.\venv311\Scripts\Activate.ps1
-uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-Open the API health check:
-
-```text
-http://127.0.0.1:8000/health
-```
-
-Open the interactive API docs:
-
-```text
-http://127.0.0.1:8000/docs
-```
 
 The SQLite database is created automatically on first startup from `database/schema.sql`. Seed data is inserted when the database is empty.
 
@@ -201,45 +115,15 @@ ThinkNote AI solves this by turning lecture videos into organized study material
 
 The goal of ThinkNote AI is not only to summarize a video. The product aims to make lecture recordings easier to study, easier to teach from, and easier to manage as reusable educational resources.
 
-## Testing
 
-Run the test suite from the project root:
 
-```powershell
-.\venv311\Scripts\Activate.ps1
-python -m unittest discover tests
-```
 
-Some runtime features require external tools or services, especially ffmpeg, Tesseract, model files, and OpenAI API access. Unit tests are designed to cover important local logic without needing to process a full lecture video every time.
-
-## GitHub Upload Commands
-
-Run these commands from PowerShell after creating an empty GitHub repository:
-
-```powershell
-cd "D:\SEM_6\FYP1\project\video_summrize"
-git init
-git status --ignored
-git add .
-git status
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
-git push -u origin main
-```
-
-If `origin` already exists:
-
-```powershell
-git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
-git push -u origin main
-```
-
-Replace `YOUR_USERNAME` and `YOUR_REPOSITORY_NAME` with your GitHub account and repository name.
 
 ## Notes For Development
 
-- Keep `.env` private and commit only `.env.example`.
-- Keep large generated files out of GitHub. Runtime storage folders are preserved with `.gitkeep` files.
-- Close DB Browser for SQLite or any other application using `thinknote_ai.db` if uploads fail with a database lock error.
-- Do not commit real YouTube cookies or API keys.
+<img width="856" height="372" alt="image" src="https://github.com/user-attachments/assets/242e52be-b8c7-4d5c-85bf-ebdc436b6154" />
+<img width="856" height="392" alt="image" src="https://github.com/user-attachments/assets/a00671c8-5b4b-48b4-bb6d-2d01e08c85fa" />
+<img width="856" height="395" alt="image" src="https://github.com/user-attachments/assets/ecb50625-9507-4796-a2c9-b1c56f3d65d8" />
+
+
+<img width="856" height="384" alt="image" src="https://github.com/user-attachments/assets/e533d130-3639-4b7f-b7d1-e4516c59f4be" />
